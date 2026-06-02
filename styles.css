@@ -54,7 +54,7 @@ body {
 
 /* Logo específico para a Escola */
 .logo-escola {
-    max-width: 280px;
+    max-width: 350px;
 }
 
 .title-section {
@@ -239,7 +239,7 @@ body {
     }
 
     .logo-escola {
-        max-width: 160px;
+        max-width: 200px;
     }
 
     .title-section h1 {
