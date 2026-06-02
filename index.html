@@ -32,7 +32,7 @@
             <li class="nav-item"><a href="#noticias" class="nav-link">Notícias</a></li>
             
             <li class="nav-item dropdown">
-                <a href="#missao" class="nav-link">Missão</a>
+                <a href="#" class="nav-link dropdown-toggle">Missão</a>
                 <ul class="submenu">
                     <li><a href="#missao-geral" class="submenu-link">Descrição Geral</a></li>
                     <li><a href="#missao-objetivos" class="submenu-link">Objetivos Gerais</a></li>
@@ -40,7 +40,7 @@
             </li>
 
             <li class="nav-item dropdown">
-                <a href="#desenvolvimento" class="nav-link">Desenvolvimento</a>
+                <a href="#" class="nav-link dropdown-toggle">Desenvolvimento</a>
                 <ul class="submenu">
                     <li><a href="#desenvolvimento-payload" class="submenu-link">Payload</a></li>
                     <li><a href="#desenvolvimento-instrumentacao" class="submenu-link">Instrumentação</a></li>
@@ -62,7 +62,8 @@
             <h2>Notícias</h2>
             <div class="subsection">
                 <h3>Notícia 1</h3>
-                <p>[Conteúdo da Notícia 1]</p>
+                <p>Com o lançamento da Limiar 1, e a consequente divulgação nas redes sociais da mesma, pelos alunos, docentes e discentes da Escola, foi recebido um convite/pedido de ajuda do <a href="https://lecafutebolclube.com/" target="_blank" class="link">Leça Futebol Clube, SAD</a> para levar a camisola oficial do clube, para a época 2025/26, à estratosfera.</p>
+                <p>Dada a disponibilidade dos elementos do CATI e atendendo à data prevista do lançamento foi possível congregar esforços e apostar nesta nova missão, apostando na recolha de dados e no voo na satisfação do acordado com o clube.</p>
             </div>
             <div class="subsection">
                 <h3>Notícia 2</h3>
@@ -151,6 +152,41 @@
     <footer class="footer">
         <p>&copy; 2026 LIMIAR2 - Balão Estratosférico. Desenvolvido pelo CATI.</p>
     </footer>
+
+    <script>
+        // Funcionalidade do menu dropdown com clique
+        document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+            toggle.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Fechar outros dropdowns abertos
+                document.querySelectorAll('.dropdown').forEach(dropdown => {
+                    if (dropdown !== this.parentElement) {
+                        dropdown.classList.remove('active');
+                    }
+                });
+                
+                // Abrir/fechar o dropdown clicado
+                this.parentElement.classList.toggle('active');
+            });
+        });
+
+        // Fechar dropdown ao clicar numa opção do submenu
+        document.querySelectorAll('.submenu-link').forEach(link => {
+            link.addEventListener('click', function() {
+                this.closest('.dropdown').classList.remove('active');
+            });
+        });
+
+        // Fechar dropdown ao clicar fora
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.dropdown')) {
+                document.querySelectorAll('.dropdown').forEach(dropdown => {
+                    dropdown.classList.remove('active');
+                });
+            }
+        });
+    </script>
 
 </body>
 </html>
