@@ -52,6 +52,11 @@ body {
     object-fit: contain;
 }
 
+/* Logo específico para a Escola */
+.logo-escola {
+    max-width: 280px;
+}
+
 .title-section {
     margin-top: 20px;
 }
@@ -231,6 +236,10 @@ body {
     .logo,
     .logo-center {
         max-width: 120px;
+    }
+
+    .logo-escola {
+        max-width: 160px;
     }
 
     .title-section h1 {
